@@ -1,0 +1,248 @@
+[
+  {
+    "name": "Adam",
+    "age": "23",
+    "player": "David",
+    "virtue": "Ambitious",
+    "vice": "Greedy",
+    "concept": "Awkward Try-Hard",
+    "chronicle": "Seattle by Night",
+    "faction": "Undecided",
+    "group": "Roll20 Forsaken",
+    "attributes": {
+      "mental": {
+        "intelligence": 1,
+        "wits": 1,
+        "resolve": 1
+      },
+      "physical": {
+        "strength": 1,
+        "dexterity": 1,
+        "stamina": 1
+      },
+      "social": {
+        "presence": 1,
+        "manipulation": 1,
+        "composure": 1
+      }
+    },
+    "skills": {
+      "mental": {
+        "academics": 0,
+        "computer": 0,
+        "crafts": 0,
+        "investigation": 0,
+        "medicine": 0,
+        "occult": 0,
+        "politics": 0,
+        "science": 0
+      },
+      "physical": {
+        "athletics": 0,
+        "brawl": 0,
+        "drive": 0,
+        "firearms": 0,
+        "larceny": 0,
+        "stealth": 0,
+        "survival": 0,
+        "weaponry": 0
+      },
+      "social": {
+        "animalKen": 0,
+        "empathy": 0,
+        "expression": 0,
+        "intimidation": 0,
+        "persuasion": 0,
+        "socialize": 0,
+        "streetwise": 0,
+        "subterfuge": 0
+      }
+    },
+    "merits": [],
+    "combatBlock": {
+      "size": 5,
+      "speed": "",
+      "defense": "",
+      "armor": "0",
+      "beats": 0,
+      "experience": 0
+    },
+    "health": {
+      "max": "",
+      "bashing": "0",
+      "lethal": "0",
+      "aggravated": "0"
+    },
+    "willpower": {
+      "max": "",
+      "spent": "0"
+    },
+    "integrity": 7,
+    "conditions": ["", ""],
+    "aspirations": ["", "", ""]
+  },
+  {
+    "name": "Vincent",
+    "age": "23",
+    "player": "David",
+    "virtue": "Ambitious",
+    "vice": "Greedy",
+    "concept": "Awkward Try-Hard",
+    "chronicle": "Seattle by Night",
+    "faction": "Undecided",
+    "group": "Roll20 Forsaken",
+    "attributes": {
+      "mental": {
+        "intelligence": 1,
+        "wits": 1,
+        "resolve": 1
+      },
+      "physical": {
+        "strength": 1,
+        "dexterity": 1,
+        "stamina": 1
+      },
+      "social": {
+        "presence": 1,
+        "manipulation": 1,
+        "composure": 1
+      }
+    },
+    "skills": {
+      "mental": {
+        "academics": 0,
+        "computer": 0,
+        "crafts": 0,
+        "investigation": 0,
+        "medicine": 0,
+        "occult": 0,
+        "politics": 0,
+        "science": 0
+      },
+      "physical": {
+        "athletics": 0,
+        "brawl": 0,
+        "drive": 0,
+        "firearms": 0,
+        "larceny": 0,
+        "stealth": 0,
+        "survival": 0,
+        "weaponry": 0
+      },
+      "social": {
+        "animalKen": 0,
+        "empathy": 0,
+        "expression": 0,
+        "intimidation": 0,
+        "persuasion": 0,
+        "socialize": 0,
+        "streetwise": 0,
+        "subterfuge": 0
+      }
+    },
+    "merits": [],
+    "combatBlock": {
+      "size": 5,
+      "speed": "",
+      "defense": "",
+      "armor": "0",
+      "beats": 0,
+      "experience": 0
+    },
+    "health": {
+      "max": "",
+      "bashing": "0",
+      "lethal": "0",
+      "aggravated": "0"
+    },
+    "willpower": {
+      "max": "",
+      "spent": "0"
+    },
+    "integrity": 7,
+    "conditions": ["", ""],
+    "aspirations": ["", "", ""]
+  },
+  {
+    "name": "Mick",
+    "age": "23",
+    "player": "David",
+    "virtue": "Ambitious",
+    "vice": "Greedy",
+    "concept": "Awkward Try-Hard",
+    "chronicle": "Seattle by Night",
+    "faction": "Undecided",
+    "group": "Roll20 Forsaken",
+    "attributes": {
+      "mental": {
+        "intelligence": 1,
+        "wits": 1,
+        "resolve": 1
+      },
+      "physical": {
+        "strength": 1,
+        "dexterity": 1,
+        "stamina": 1
+      },
+      "social": {
+        "presence": 1,
+        "manipulation": 1,
+        "composure": 1
+      }
+    },
+    "skills": {
+      "mental": {
+        "academics": 0,
+        "computer": 0,
+        "crafts": 0,
+        "investigation": 0,
+        "medicine": 0,
+        "occult": 0,
+        "politics": 0,
+        "science": 0
+      },
+      "physical": {
+        "athletics": 0,
+        "brawl": 0,
+        "drive": 0,
+        "firearms": 0,
+        "larceny": 0,
+        "stealth": 0,
+        "survival": 0,
+        "weaponry": 0
+      },
+      "social": {
+        "animalKen": 0,
+        "empathy": 0,
+        "expression": 0,
+        "intimidation": 0,
+        "persuasion": 0,
+        "socialize": 0,
+        "streetwise": 0,
+        "subterfuge": 0
+      }
+    },
+    "merits": [],
+    "combatBlock": {
+      "size": 5,
+      "speed": "",
+      "defense": "",
+      "armor": "0",
+      "beats": 0,
+      "experience": 0
+    },
+    "health": {
+      "max": "",
+      "bashing": "0",
+      "lethal": "0",
+      "aggravated": "0"
+    },
+    "willpower": {
+      "max": "",
+      "spent": "0"
+    },
+    "integrity": 7,
+    "conditions": ["", ""],
+    "aspirations": ["", "", ""]
+  }
+]
