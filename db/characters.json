@@ -1,8 +1,6 @@
 [
   {
-    "_id": {
-      "$oid": "5b9d6ef750e7c84ac487de96"
-    },
+    "_id": "5b9d6ef750e7c84ac487de96",
     "attributes": {
       "mental": {
         "intelligence": 2,
@@ -79,16 +77,7 @@
     "chronicle": "Seattle By Night",
     "faction": "Invictus",
     "group": "Roll20",
-    "userId": {
-      "$oid": "5b9d6d35f482f24cfc4a0880"
-    },
-    "merits": [],
-    "createdAt": {
-      "$date": "2018-09-15T20:43:35.797Z"
-    },
-    "updatedAt": {
-      "$date": "2018-09-15T20:43:35.797Z"
-    },
-    "__v": 0
+    "userId": "5b9d6d35f482f24cfc4a0880",
+    "merits": []
   }
 ]
