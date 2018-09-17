@@ -182,7 +182,10 @@ router.delete('/:id', (req, res, next) => {
   }
 
   Character.findOneAndRemove({ _id: id, userId })
-    .then(() => {
+    .then(result => {
+      if (!result) {
+        next();
+      }
       res.status(204).end();
     })
     .catch(err => next(err));

@@ -21,9 +21,8 @@ chai.use(chaiHttp);
 describe('CoD Characters API - Character', function() {
   before(function() {
     console.log(TEST_DATABASE_URL);
-    return mongoose
-      .connect(TEST_DATABASE_URL)
-      .then(() => mongoose.connection.db.dropDatabase());
+    return mongoose.connect(TEST_DATABASE_URL);
+    // .then(() => mongoose.connection.db.dropDatabase());
   });
 
   let user = {};
@@ -47,6 +46,133 @@ describe('CoD Characters API - Character', function() {
 
   after(function() {
     return mongoose.disconnect();
+  });
+
+  describe('POST /api/character', function() {
+    it('should create and return a new chracter when provided valid data', function() {
+      const newCharacter = {
+        name: 'Miscellaneous',
+        attributes: {
+          mental: {
+            intelligence: 1,
+            wits: 1,
+            resolve: 1
+          },
+          physical: {
+            strength: 1,
+            dexterity: 1,
+            stamina: 1
+          },
+          social: {
+            presence: 1,
+            manipulation: 1,
+            composure: 1
+          }
+        },
+        skills: {
+          mental: {
+            academics: 1,
+            computers: 1,
+            crafts: 1,
+            medicine: 1,
+            occult: 1,
+            politics: 1,
+            science: 1
+          },
+          physical: {
+            athletics: 1,
+            brawl: 1,
+            drive: 1,
+            firearms: 1,
+            larcenry: 1,
+            stealth: 1,
+            survival: 1,
+            weaponry: 1
+          },
+          social: {
+            animalKen: 1,
+            empathy: 1,
+            expression: 1,
+            intimidation: 1,
+            persuasion: 1,
+            socialize: 1,
+            streetwise: 1,
+            subterfuge: 1
+          }
+        },
+        combatBlock: {
+          size: 5
+        },
+        age: 23,
+        player: 'TestPlayer',
+        virtue: 'Fortitude',
+        vice: 'Gluttony',
+        concept: 'Test Dummy',
+        chronicle: 'Test Chronicle',
+        faction: 'Test Faction',
+        group: 'Test group'
+      };
+
+      let res;
+      return chai
+        .request(app)
+        .post('/api/character')
+        .set('Authorization', `Bearer ${token}`)
+        .send(newCharacter)
+        .then(_res => {
+          res = _res;
+          expect(res).to.have.status(201);
+          expect(res).to.have.header('location');
+          expect(res).to.be.json;
+          expect(res.body).to.be.a('object');
+          expect(res.body).to.have.keys(
+            'id',
+            'name',
+            'userId',
+            'createdAt',
+            'updatedAt',
+            'age',
+            'aspirations',
+            'attributes',
+            'chronicle',
+            'combatBlock',
+            'concept',
+            'player',
+            'conditions',
+            'faction',
+            'group',
+            'health',
+            'integrity',
+            'merits',
+            'skills',
+            'vice',
+            'virtue',
+            'willpower'
+          );
+          return Character.findById(res.body.id);
+        })
+        .then(data => {
+          expect(res.body.id).to.equal(data.id);
+          expect(res.body.name).to.equal(data.name);
+          expect(new Date(res.body.createdAt)).to.eql(data.createdAt);
+          expect(new Date(res.body.updatedAt)).to.eql(data.updatedAt);
+        });
+    });
+
+    it('should return an error when missing "name" field', function() {
+      const newCharacter = {};
+      return chai
+        .request(app)
+        .post('/api/character')
+        .set('Authorization', `Bearer ${token}`)
+        .send(newCharacter)
+        .then(res => {
+          expect(res).to.have.status(400);
+          expect(res).to.be.json;
+          expect(res.body).to.be.a('object');
+          expect(res.body.message).to.equal('Missing `name` in request body');
+        });
+    });
   });
 
   describe('GET /api/character', function() {
@@ -159,134 +285,6 @@ describe('CoD Characters API - Character', function() {
     });
   });
 
-  describe('POST /api/character', function() {
-    it('should create and return a new chracter when provided valid data', function() {
-      const newCharacter = {
-        name: 'Miscellaneous',
-        attributes: {
-          mental: {
-            intelligence: 1,
-            wits: 1,
-            resolve: 1
-          },
-          physical: {
-            strength: 1,
-            dexterity: 1,
-            stamina: 1
-          },
-          social: {
-            presence: 1,
-            manipulation: 1,
-            composure: 1
-          }
-        },
-        skills: {
-          mental: {
-            academics: 1,
-            computers: 1,
-            crafts: 1,
-            medicine: 1,
-            occult: 1,
-            politics: 1,
-            science: 1
-          },
-          physical: {
-            athletics: 1,
-            brawl: 1,
-            drive: 1,
-            firearms: 1,
-            larcenry: 1,
-            stealth: 1,
-            survival: 1,
-            weaponry: 1
-          },
-          social: {
-            animalKen: 1,
-            empathy: 1,
-            expression: 1,
-            intimidation: 1,
-            persuasion: 1,
-            socialize: 1,
-            streetwise: 1,
-            subterfuge: 1
-          }
-        },
-        combatBlock: {
-          size: 5
-        },
-        age: 23,
-        player: 'TestPlayer',
-        virtue: 'Fortitude',
-        vice: 'Gluttony',
-        concept: 'Test Dummy',
-        chronicle: 'Test Chronicle',
-        faction: 'Test Faction',
-        group: 'Test group',
-        userId: '5b9d6d35f482f24cfc4a0880'
-      };
-
-      let res;
-      return chai
-        .request(app)
-        .post('/api/character')
-        .set('Authorization', `Bearer ${token}`)
-        .send(newCharacter)
-        .then(_res => {
-          res = _res;
-          expect(res).to.have.status(201);
-          expect(res).to.have.header('location');
-          expect(res).to.be.json;
-          expect(res.body).to.be.a('object');
-          expect(res.body).to.have.keys(
-            'id',
-            'name',
-            'userId',
-            'createdAt',
-            'updatedAt',
-            'age',
-            'aspirations',
-            'attributes',
-            'chronicle',
-            'combatBlock',
-            'concept',
-            'player',
-            'conditions',
-            'faction',
-            'group',
-            'health',
-            'integrity',
-            'merits',
-            'skills',
-            'vice',
-            'virtue',
-            'willpower'
-          );
-          return Character.findById(res.body.id);
-        })
-        .then(data => {
-          expect(res.body.id).to.equal(data.id);
-          expect(res.body.name).to.equal(data.name);
-          expect(new Date(res.body.createdAt)).to.eql(data.createdAt);
-          expect(new Date(res.body.updatedAt)).to.eql(data.updatedAt);
-        });
-    });
-
-    it('should return an error when missing "name" field', function() {
-      const newCharacter = {};
-      return chai
-        .request(app)
-        .post('/api/character')
-        .set('Authorization', `Bearer ${token}`)
-        .send(newCharacter)
-        .then(res => {
-          expect(res).to.have.status(400);
-          expect(res).to.be.json;
-          expect(res.body).to.be.a('object');
-          expect(res.body.message).to.equal('Missing `name` in request body');
-        });
-    });
-  });
-
   describe('PATCH /api/character/:id', function() {
     it('should find and update a character when given valid data', function() {
       const updateCharacter = { name: 'Test Update Name' };
@@ -365,11 +363,9 @@ describe('CoD Characters API - Character', function() {
         })
         .then(res => {
           expect(res).to.have.status(204);
-          console.log(character.id);
-          return Character.count({ _id: character.id });
+          return Character.countDocuments({ _id: character.id });
         })
         .then(count => {
-          console.log(count);
           expect(count).to.equal(0);
         });
     });
