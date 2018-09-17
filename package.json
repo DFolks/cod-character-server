@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "mocha": "mocha --exit --file test/setup.test.js",
     "mocha-exit0": "mocha --exit --file test/setup.test.js  || true",
-    "test": "node --exec npm run mocha-exit0",
+    "test": "npm run mocha-exit0",
     "cover": "node --exec nyc --reporter=lcov --reporter=text-summary npm run mocha-exit0",
     "heroku": "node index.js",
     "travis": "npm run mocha"
