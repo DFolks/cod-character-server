@@ -353,7 +353,7 @@ describe('CoD Characters API - Character', function() {
   });
 
   describe('DELETE /api/character/:id', function() {
-    it.only('should delete an existing character and respond with a 204 status', function() {
+    it('should delete an existing character and respond with a 204 status', function() {
       let character;
       return Character.findOne()
         .then(_character => {
