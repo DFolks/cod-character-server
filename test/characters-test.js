@@ -364,7 +364,6 @@ describe('CoD Characters API - Character', function() {
             .set('Authorization', `Bearer ${token}`);
         })
         .then(res => {
-          console.log(res);
           expect(res).to.have.status(204);
           console.log(character.id);
           return Character.count({ _id: character.id });
