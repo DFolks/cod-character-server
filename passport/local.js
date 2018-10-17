@@ -26,7 +26,7 @@ const localStrategy = new LocalStrategy((username, password, done) => {
           location: 'password'
         });
       }
-      return done(null, user);
+      return done(null, user.toObject());
     })
     .catch(err => {
       if (err.reason === 'LoginError') {
