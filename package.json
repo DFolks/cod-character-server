@@ -1,6 +1,9 @@
 {
   "name": "cod-characters-back-end",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.9.0"
+  },
   "description": "Back-end code for CoD Characters App",
   "main": "index.js",
   "scripts": {
