@@ -13,132 +13,116 @@ const charSchema = new mongoose.Schema({
   chronicle: { type: String },
   faction: { type: String },
   group: { type: String },
-  attributes: {
-    mental: {
-      intelligence: {
-        type: Number,
-        required: true,
-        default: 1,
-        min: 1,
-        max: 20
-      },
-      wits: { type: Number, required: true, default: 1, min: 1, max: 20 },
-      resolve: { type: Number, required: true, default: 1, min: 1, max: 20 }
-    },
-    physical: {
-      strength: { type: Number, required: true, default: 1, min: 1, max: 20 },
-      dexterity: { type: Number, required: true, default: 1, min: 1, max: 20 },
-      stamina: { type: Number, required: true, default: 1, min: 1, max: 20 }
-    },
-    social: {
-      presence: { type: Number, required: true, default: 1, min: 1, max: 20 },
-      manipulation: {
-        type: Number,
-        required: true,
-        default: 1,
-        min: 1,
-        max: 20
-      },
-      composure: { type: Number, required: true, default: 1, min: 1, max: 20 }
-    }
+  intelligence: {
+    type: Number,
+    required: true,
+    default: 1,
+    min: 1,
+    max: 20
   },
-  skills: {
-    mental: {
-      academics: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      computers: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      crafts: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      investigation: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      medicine: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      occult: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      politics: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      science: { type: Number, default: 0, required: true, min: 0, max: 20 }
-    },
-    physical: {
-      athletics: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      brawl: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      drive: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      firearms: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      larceny: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      stealth: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      survival: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      weaponry: { type: Number, default: 0, required: true, min: 0, max: 20 }
-    },
-    social: {
-      animalKen: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      empathy: { type: Number, default: 0, required: true, min: 0, max: 20 },
-      expression: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      intimidation: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      persuasion: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      socialize: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      streetwise: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      },
-      subterfuge: {
-        type: Number,
-        default: 0,
-        required: true,
-        min: 0,
-        max: 20
-      }
-    }
+  wits: { type: Number, required: true, default: 1, min: 1, max: 20 },
+  resolve: { type: Number, required: true, default: 1, min: 1, max: 20 },
+  strength: { type: Number, required: true, default: 1, min: 1, max: 20 },
+  dexterity: { type: Number, required: true, default: 1, min: 1, max: 20 },
+  stamina: { type: Number, required: true, default: 1, min: 1, max: 20 },
+  presence: { type: Number, required: true, default: 1, min: 1, max: 20 },
+  manipulation: {
+    type: Number,
+    required: true,
+    default: 1,
+    min: 1,
+    max: 20
+  },
+  composure: { type: Number, required: true, default: 1, min: 1, max: 20 },
+  academics: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  computers: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  crafts: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  investigation: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  medicine: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  occult: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  politics: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  science: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  athletics: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  brawl: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  drive: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  firearms: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  larceny: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  stealth: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  survival: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  weaponry: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  animalKen: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  empathy: { type: Number, default: 0, required: true, min: 0, max: 20 },
+  expression: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  intimidation: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  persuasion: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  socialize: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  streetwise: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
+  },
+  subterfuge: {
+    type: Number,
+    default: 0,
+    required: true,
+    min: 0,
+    max: 20
   },
   merits: [
     {
@@ -147,12 +131,10 @@ const charSchema = new mongoose.Schema({
       description: { type: String }
     }
   ],
-  combatBlock: {
-    size: { type: Number, required: true, default: 5, min: 4, max: 6 },
-    armor: { type: Number, default: 0 },
-    beats: { type: Number, default: 0, min: 0, max: 4 },
-    experience: { type: Number, default: 0, min: 0 }
-  },
+  size: { type: Number, required: true, default: 5, min: 4, max: 6 },
+  armor: { type: Number, default: 0 },
+  beats: { type: Number, default: 0, min: 0, max: 4 },
+  experience: { type: Number, default: 0, min: 0 },
   health: {
     damage: {
       bashing: {
@@ -187,34 +169,29 @@ const charSchema = new mongoose.Schema({
   aspirations: [{ type: String }]
 });
 
-charSchema.virtual('combatBlock.initiativeMod').get(function() {
-  return this.attributes.social.composure + this.attributes.physical.dexterity;
+charSchema.virtual('initiativeMod').get(function() {
+  return this.composure + this.dexterity;
 });
 
 charSchema.virtual('health.max').get(function() {
-  return this.combatBlock.size + this.attributes.physical.stamina;
+  return this.size + this.stamina;
 });
 
 charSchema.virtual('willpower.max', 'willpower.spent.max').get(function() {
-  return this.attributes.social.composure + this.attributes.mental.resolve;
+  return this.composure + this.resolve;
 });
 
-charSchema.virtual('combatBlock.speed').get(function() {
-  return (
-    this.combatBlock.size +
-    this.attributes.physical.strength +
-    this.attributes.physical.dexterity
-  );
+charSchema.virtual('speed').get(function() {
+  return this.size + this.strength + this.dexterity;
 });
 
-charSchema.virtual('combatBlock.defense').get(function() {
+charSchema.virtual('defense').get(function() {
   let defense;
-  if (this.attributes.mental.wits < this.attributes.physical.dexterity) {
-    defense = this.attributes.mental.wits + this.skills.physical.athletics;
+  if (this.wits < this.dexterity) {
+    defense = this.wits + this.athletics;
     return defense;
   } else {
-    defense =
-      this.attributes.physical.dexterity + this.skills.physical.athletics;
+    defense = this.dexterity + this.athletics;
     return defense;
   }
 });
